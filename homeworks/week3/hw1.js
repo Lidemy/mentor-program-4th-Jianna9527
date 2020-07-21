@@ -13,10 +13,14 @@ rl.on('line', (line) => {
   lines.push(line);
 });
 
-// 輸入結束，開始針對 lines 做處理
-rl.on('close', () => {
-  solve(lines);
-});
+// 自訂 function 放這裡
+function printStar(n) {
+  let star = '';
+  for (let i = 1; i <= n; i++) {
+    star += '*';
+  }
+  return star;
+}
 
 // 上面都不用管，只需要完成這個 function 就好，可以透過 lines[i] 拿取內容
 function solve(input) {
@@ -33,10 +37,7 @@ function solve(input) {
   console.log(result);
 }
 
-function printStar(n) {
-  let star = '';
-  for (let i = 1; i <= n; i++) {
-    star += '*';
-  }
-  return star;
-}
+// 輸入結束，開始針對 lines 做處理
+rl.on('close', () => {
+  solve(lines);
+});
