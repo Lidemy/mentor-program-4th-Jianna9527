@@ -21,7 +21,7 @@ function compare(a, b, rule) {
   // 那如果是比小怎麼辦？把 AB 對調就好
   // 假設 A 是 5，B 是 3，我們的邏輯會回傳 A
   // 但如果是比小，把 AB 對調，就會回傳 B 了
-  if (rule === -1) {
+  if (rule === '-1') {
     const temp = a;
     a = b;
     b = temp;
