@@ -1,6 +1,6 @@
 const request = require('request');
 
-const API_URL = 'https://lidemy-book-store.herokuapp.com/books?_limit=10';
+const API_URL = 'https://lidemy-book-store.herokuapp.com';
 
 request(`${API_URL}/books?_limit=10`, (err, res, body) => {
   if (err) {
