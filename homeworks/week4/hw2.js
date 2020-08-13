@@ -66,6 +66,10 @@ function readBook(bookID) {
       console.log('抓取失敗', err);
       return;
     }
+    if (body.length === 2) {
+      console.log('沒有此 id 之書本資料');
+      return;
+    }
     let data;
     try { // 以防 response 不是一個合法的 JSON 字串
       data = JSON.parse(body);
