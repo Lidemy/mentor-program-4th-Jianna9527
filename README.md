@@ -565,6 +565,8 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 1. [部署 AWS EC2 遠端主機 + Ubuntu LAMP 環境 + phpmyadmin](https://github.com/Lidemy/mentor-program-2nd-yuchun33/issues/15)
 2. [一小時完成 VPS (Virtual Private Server) 部署](https://github.com/Lidemy/mentor-program-2nd-futianshen/issues/21)
 3. [如何遠端連接虛擬主機上的 mySQL 資料庫 ？](https://github.com/Lidemy/mentor-program-2nd-futianshen/issues/33)
+4. [[紀錄] 部屬 AWS EC2 雲端主機 + LAMP Server + phpMyAdmin](https://mtr04-note.coderbridge.io/2020/09/15/-%E7%B4%80%E9%8C%84-%08-%E9%83%A8%E5%B1%AC-aws-ec2-%E9%9B%B2%E7%AB%AF%E4%B8%BB%E6%A9%9F-/)
+5. [AWS EC2 佈署網站：卡關記錄](https://nicolakacha.coderbridge.io/2020/09/16/launch-website/)
 
 接著有關於專有名詞的部分，只要稍微聽過有個印象就好了，暫時不需要深入研究，可以看[程式導師實驗計畫：Lesson 8-2 之資料庫](https://www.youtube.com/watch?v=iDG8Ha2uZPs)來學習什麼是 NoSQL、transaction、ACID 與 Lock。
 
@@ -625,7 +627,22 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 1. [JS201] 進階 JavaScript：那些你一直搞不懂的地方
 2. [What the heck is the event loop anyway? | Philip Roberts | JSConf EU](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
 
+可以搭配其他我寫的文章一起閱讀：
+
+1. [該來理解 JavaScript 的原型鍊了](https://blog.huli.tw/2017/08/27/the-javascripts-prototype-chain/)
+2. [深入探討 JavaScript 中的參數傳遞：call by value 還是 reference？](https://blog.huli.tw/2018/06/23/javascript-call-by-value-or-reference/)
+3. [我知道你懂 hoisting，可是你了解到多深？](https://blog.huli.tw/2018/11/10/javascript-hoisting-and-tdz/)
+4. [所有的函式都是閉包：談 JS 中的作用域與 Closure](https://blog.huli.tw/2018/12/08/javascript-closure/)
+5. [淺談 JavaScript 頭號難題 this：絕對不完整，但保證好懂](https://blog.huli.tw/2019/02/23/javascript-what-is-this/)
+6. [JavaScript 中的同步與非同步（上）：先成為 callback 大師吧！](https://blog.huli.tw/2019/10/04/javascript-async-sync-and-callback/)
+7. [覺得 JavaScript function 很有趣的我是不是很奇怪](https://blog.huli.tw/2020/04/18/javascript-function-is-awesome/)
+
 如果你不排斥比較長的影片，也可以看這個：[程式導師實驗計畫第二期：Week9-2 JavaScript 執行原理](https://youtu.be/3s69FPDZGRk) （內容有很多應該都該 JS201 類似，所以有時間再看就好，沒看也沒關係）
+
+物件導向的地方我自己沒有很熟，所以還在探索怎麼教會比較好，這邊有兩個第二期的影片，會用 PHP 跟 JavaScript 當範例。會用 PHP 是因為 JS 中的物件導向並不完整，而 PHP 的完整許多，但要注意影片中會在 PHP 跟 JS 中切換，建議大家只需要了解一些基本概念即可，不需要執著於一定要完全搞懂物件導向：
+
+1. [程式導師實驗計畫第二期：Week5-2：物件導向程式設計](https://www.youtube.com/watch?v=nZhzLcV9eHI&ab_channel=Lidemy%E9%8B%B0%E5%AD%B8%E9%99%A2)
+2. [Week5 物件導向（續）：繼承與 static](https://www.youtube.com/watch?v=k5TGAw7faNg&ab_channel=Lidemy%E9%8B%B0%E5%AD%B8%E9%99%A2)
 
 [HW16 作業連結](/homeworks/week16)
 
@@ -639,6 +656,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 - [ ] P1 你能夠舉出一個運用 Closure 的例子
 - [ ] P1 你知道 Prototype 在 JavaScript 裡是什麼
 - [ ] P1 你知道大部分情況下 this 的值是什麼
+- [ ] P2 你知道物件導向的基本概念（類別、實體、繼承、封裝）
 
 ### 第十七週（10/05 ~ 10/11）：現代後端開發（上）
 
