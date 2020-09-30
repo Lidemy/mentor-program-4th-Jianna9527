@@ -14,7 +14,7 @@
 </select>
 ```
 ### dialog（感覺不太實用呢...）
-目前只有 Chrome 和 Safari 6 支持此標籤，利用 `<dialog>` 標籤來定義對話框、確認框等。
+利用 `<dialog>` 標籤來定義對話框、確認框等。
 ```htmlmixed
 <dialog open>This is an open dialog window</dialog>
 ```
