@@ -191,7 +191,7 @@ body {
 }
 
 .nav_button li a {
-  padding: 14px 25px;
+  padding: 14px 20px;
   border-radius: 8px;
   font-size: 18px;
 }
@@ -304,7 +304,6 @@ h2::before {
 
 .comment_content {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -318,8 +317,7 @@ h2::before {
   padding: 56px 20px 30px 20px;
   border: 1px solid #c7e5ec;
   box-shadow: -1.4px -1.4px 4px 0 #d8eaef;
-  /* width: 30%; */
-  width: 565px;
+  width: calc(100%/3);
   position: relative;
 }
 
@@ -401,11 +399,6 @@ h2::before {
     margin-bottom: 10px;
   }
 
-  .nav_button li {
-    /* margin-left: 11px;
-    margin-right: 11px; */
-  }
-
   .nav_button li a {
     padding: 0px;
     border-radius: 0px;
@@ -431,6 +424,14 @@ h2::before {
   .bg-order {
     margin-right: 0px;
     margin-bottom: 20px;
+  }
+
+  .comment_content {
+    flex-wrap: wrap;
+  }
+
+  .comment_content div {
+    width: 565px;
   }
 
   .footer_top {
