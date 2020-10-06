@@ -1,0 +1,277 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*----------以下為自訂css----------*/
+body {
+    font-family: 'Questrial', sans-serif;
+}
+
+.wrapper {
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.list {
+    max-width: 760px;
+    margin: 0 auto;
+    background-color: #FFFDE7;
+    padding: 15px 35px 30px 35px;
+    box-shadow: 2px 2px 6px #cccccc;
+}
+
+.list_header {
+    margin-bottom: 40px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 64px;
+    font-weight: bold;
+    color: #5687e2;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.list_input {
+    width: 100%;
+    background-color: #FFFDE7;
+    padding: 10px;
+    color: #5687e2;
+    font-size: 20px;
+    border: none;
+    font-family: 'Questrial', sans-serif;
+}
+
+.list_input:focus {
+    outline: none;
+}
+
+::placeholder {
+    /* CSS 3 標準 */
+    color: #5687e2ad;
+    font-size: 20px;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome, Safari */
+    color: #5687e2ad;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #5687e2ad;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #5687e2ad;
+    opacity: 1;
+}
+
+.list_item {
+    background-color: #FFFDE7;
+    color: #205ccc;
+    font-size: 20px;
+    padding: 20px 20px 20px 40px;
+}
+
+.list_item:hover {
+    background-color: #ffe4c485;
+}
+
+.list_item:hover span.btn-finished {
+    visibility: visible;
+}
+
+.list_item:hover span.btn-delete {
+    visibility: visible;
+}
+
+.list_item span {
+    position: relative;
+    display: block;
+    visibility: hidden;
+}
+
+.list_item.checked {
+    text-decoration: line-through;
+}
+
+.btn-finished::before {
+    content: 'check_box_outline_blank';
+    font-family: 'Material Icons';
+    font-size: 30px;
+    color: #5687e2;
+    position: absolute;
+    cursor: pointer;
+    left: -35px;
+    top: -6px;
+}
+
+.btn-finished:hover::before {
+    content: 'check_box';
+}
+
+.checked .btn-finished::before{
+    content: 'check_box';
+    font-family: 'Material Icons';
+    font-size: 30px;
+    color: #5687e2;
+    position: absolute;
+    cursor: pointer;
+    left: -35px;
+    top: -6px;
+}
+
+.checked .btn-finished:hover::before {
+    content: 'check_box_outline_blank';
+}
+
+.btn-delete::after {
+    content: 'delete';
+    font-family: 'Material Icons';
+    font-size: 30px;
+    color: #fb8484;
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: -25px;
+}
+
+.btn-delete:hover::after {
+    color: #ea6262;
+}
