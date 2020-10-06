@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新拖延運動報名表單</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <form class="apply_form" name="apply_form" action="">
+            <h1>新拖延運動報名表單</h1>
+            <p>
+                活動日期：2020/12/10 ~ 2020/12/11<br>
+                活動地點：台北市大安區新生南路二段1號
+            </p>
+            <p class="color-red notice">* 必填</p>
+            <div class="question-block">
+                <h2 class="question required">暱稱</h2>
+                <input type="text" name="nickName" id="nickName" placeholder="您的回答">
+            </div>
+            <p class="warning hidden">請輸入暱稱</p>
+            <div class="question-block">
+                <h2 class="question required">電子郵件</h2>
+                <input type="text" name="email" id="email" placeholder="您的電子郵件">
+            </div>
+            <p class="warning hidden">請輸入電子郵件</p>
+            <div class="question-block">
+                <h2 class="question required">手機號碼</h2>
+                <input type="text" name="phone" id="phone" placeholder="您的手機號碼">
+            </div>
+            <p class="warning hidden">請輸入手機號碼</p>
+            <div class="question-block">
+                <h2 class="question required"> 報名類型</h2>
+                <input type="radio" name="type" id="type1" value="1"><label for="type1">躺在床上用想像力實作</label><br>
+                <input type="radio" name="type" id="type2" value="2"><label for="type2">趴在地上滑手機找現成的</label>
+            </div>
+            <p class="warning hidden">請選擇報名類型</p>
+            <div class="question-block">
+                <h2 class="question required">怎麼知道這個活動的？</h2>
+                <input type="text" name="howToKnow" id="howToKnow" placeholder="您的回答">
+            </div>
+            <p class="warning hidden">請輸入您的回答</p>
+            <h2 class="question">其他</h2>
+            <p>對活動的一些建議</p>
+            <input type="text" name="opinion" id="opinion" placeholder="您的回答">
+            <input type="submit" class="btn_submit" value="提交">
+            <p>請勿透過表單送出您的密碼。</p>
+        </form>
+    </div>
+    <footer>
+        © 2020 © Copyright. All rights Reserved.
+    </footer>
+    <script src="formValidation.js"></script>
+</body>
+
+</html>
