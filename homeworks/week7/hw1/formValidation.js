@@ -18,7 +18,7 @@ const inputResult = {};
 function isValid(column) {
   let result = true;
   for (let i = 0; i < column.length; i++) {
-    const { value } = document.forms.apply_form.elements[column[i]].value;
+    const value = document.forms.apply_form.elements[column[i]].value;
     const element = document.querySelector(`input[name=${column[i]}]`);
     if (!value) {
       element.parentElement.nextElementSibling.classList.remove('hidden');
