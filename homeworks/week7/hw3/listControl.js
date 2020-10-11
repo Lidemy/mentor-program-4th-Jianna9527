@@ -2,7 +2,7 @@
 const textInput = document.querySelector('.list_input');
 const listGroup = document.querySelector('.list_group');
 textInput.addEventListener('keydown', (e) => {
-  if (e.keyCode === 13) {
+  if (e.keyCode === 13 && textInput.value.replace(/\s+/g, '').length !== 0) {
     const newItem = document.createElement('li');
     newItem.classList.add('list_item');
     const btnFinished = document.createElement('span');
