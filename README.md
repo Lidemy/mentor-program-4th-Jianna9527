@@ -1,7 +1,5 @@
 # 程式導師實驗計畫第四期
 
-備註：二十週以後的課程尚未完成，作業也還沒決定
-
 ## 這是什麼
 
 [程式導師實驗計畫第四期](https://bootcamp.lidemy.com)是一個為期六個月的計畫，要求學生付出一定的時間（每週至少付出三十小時），希望能在結業時培養出合格的（意思就是找得到工作）的工程師，並且在就職後依舊能持續成長，成為好的工程師。
@@ -750,22 +748,39 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 ### 第二十一週（11/02 ~ 11/08）：前端框架（一）
 
+備註：大家可以把 week21、22 當作一組，week 23、24 當作一組，因為 React 的地方比較難切，而且一週的時間我覺得不太夠，所以可以用兩週把課程完整看完再把作業一起寫完，可能會比較容易一些。
+
 終於要進入到前端框架 React 了（雖然嚴格來說 React 並不是一個框架，但搭配其他各種 React 生態系成員，其實就算是一個框架了）。
 
 這週會學習到 React 的基本應用以及原理，了解為什麼我們需要使用 React。
 
-延伸閱讀：[React 性能優化大挑戰：一次理解 Immutable data 跟 shouldComponentUpdate](https://blog.techbridge.cc/2018/01/05/react-render-optimization/)
-
 指定教材：
 
-1. [FE301] React 基礎：全部
-2. 程式導師實驗計畫第二期：Week12-1 React
-3. 程式導師實驗計畫第二期：Week12-2 React 續
-4. [官方教學](https://reactjs.org/tutorial/tutorial.html)
-5. [React.js 小書](http://huziketang.mangojuice.top/books/react/)
+React 的核心概念之一叫做 component，要寫出這個 component 有兩種方式，一個是透過 class，一個是透過 function，前者就叫做 class component，後者叫做 function component。
 
+React 在 2019 年 2 月推出 v16.8 這個版本，做了一個很大的改動，那就是多了一個東西叫做 hooks，讓 function component 也能擁有 state。
 
-[HW21 作業連結](/homeworks/week21/fe)
+這個對 React 生態系的影響很大，甚至改變了原本在寫 React 時的思考方式，是很大的變革，但滿多教材都是比較舊的內容，裡面會提到的東西叫做 class component。
+
+雖然說 class component 在很多 app 裡還是很常看到，但基本上新的 app 都是用 function component + hooks 在開發了，底下會把學習資源分成 function component + class component 兩塊，請先學習 function component，如果看不懂或有疑惑，再回去看 class component。
+
+#### function component 學習資源
+
+1. [FE302] React 基礎 - hooks 版本，看到「React 基礎」結束，應該就能寫出本週的作業了
+
+部署的部分可以參考 FE302 課程中的「部署 React App」，記得在交作業之前先部署好，助教才比較方便改作業。
+
+如果課程看不懂，可以額外參考：[從 Hooks 開始，讓你的網頁 React 起來](https://ithelp.ithome.com.tw/users/20103315/ironman/2668?page=1)
+
+#### class component 學習資源
+
+1. [FE301] React 基礎（Class component 版）：全部
+2. [官方教學](https://reactjs.org/tutorial/tutorial.html)
+3. [React.js 小書](http://huziketang.mangojuice.top/books/react/)
+
+延伸閱讀：[React 性能優化大挑戰：一次理解 Immutable data 跟 shouldComponentUpdate](https://blog.techbridge.cc/2018/01/05/react-render-optimization/)
+
+[HW21 作業連結](/homeworks/week21)
 
 #### 自我檢測
 
@@ -778,60 +793,107 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 在上一週結束之後，大家應該對 React 有了一些基本的感覺，這一週我們要繼續培養對 React 的感覺，讓大家對 React 越來越熟練。
 
-除此之外也會教大家用 React Router 這一套 library，來實做前端的路由。
+除此之外也會教大家用 React Router 這一套 library，來實做前端的路由。然後也會在課程中帶大家做出一個半成品的 SPA 部落格，並交由各位把剩下的功能完成。
 
 指定教材：
 
-1. [FE301] React 基礎：全部
-2. 程式導師實驗計畫第二期：Week13-1 還是 React
-3. 程式導師實驗計畫第二期：Week13-2 依舊 React
+1. [FE302] React 基礎 - hooks 版本：全部
+2. [淺談新手在學習 SPA 時的常見問題：以 Router 為例](https://blog.huli.tw/2019/09/18/spa-common-problem-about-router/)
+3. [How Are Function Components Different from Classes?](https://overreacted.io/how-are-function-components-different-from-classes/)
+4. [A Complete Guide to useEffect](https://overreacted.io/a-complete-guide-to-useeffect/)
 
-[HW22 作業連結](/homeworks/week22/fe)
+[HW22 作業連結](/homeworks/week22)
 
-延伸閱讀：[前後端分離與 SPA](https://blog.techbridge.cc/2017/09/16/frontend-backend-mvc/)、[跟著小明一起搞懂技術名詞：MVC、SPA 與 SSR](https://medium.com/@hulitw/introduction-mvc-spa-and-ssr-545c941669e9)
+延伸閱讀：
+
+1. [前後端分離與 SPA](https://blog.techbridge.cc/2017/09/16/frontend-backend-mvc/)
+2. [跟著小明一起搞懂技術名詞：MVC、SPA 與 SSR](https://medium.com/@hulitw/introduction-mvc-spa-and-ssr-545c941669e9)
 
 #### 自我檢測
 
-- [ ] 我熟悉 React 的基本使用
-- [ ] 我知道如何使用 React Router 
-- [ ] 我了解 React Router 的目的
-- [ ] 我知道什麼是 Single Page Application
-- [ ] 我理解現在的前端與以往的差別
+- [ ] P1 我熟悉 React 的基本使用
+- [ ] P1 我知道如何使用 React Router 
+- [ ] P1 我了解 React Router 的目的
+- [ ] P1 我知道什麼是 Single Page Application
+- [ ] P1 我理解現在的前端與以往的差別
+- [ ] P1 我知道 class component 與 function component 的差異
+- [ ] P1 我知道 class component 的各個 lifecycle
+- [ ] P2 我知道每一個 hook 大概是在做什麼
 
 ### 第二十三週（11/16 ~ 11/22）：前端框架（三）
 
-在之前的 React 課程中，我們已經慢慢熟悉 React 的思考模式，可是還有一些問題還沒解決，雖然你現在感受不太到，但是在 App 慢慢變大之後就會碰到了。
+在之前的 React 課程中，我們已經慢慢熟悉 React 的思考模式，雖然說 React 有提供管理 state 相關的功能，但有些時候可能不太夠用。
 
-接續之前的課程，這一週會讓你的 Web App 變得更加完整，會導入一個新的東西：Redux，說明我們為什麼需要它。
+因此呢，Facebook 當初在推出 React 的時候，一併提出了另外一套應用程式的架構叫做 flux 來管理你的資料，以及如何改變這些資料。
+
+經過時間的演進，當初最早的 flux 架構經過社群的改良以後變成了各個 library，有著各種實作，而以 React 來說，最有名的就是一套叫做 Redux 的 library。
+
+雖然說 redux 與 flux 長得不太一樣，但我認為能理解 flux 的話有助於理解 redux，所以可以參考：
+
+1. [Flux: In-Depth Overview](https://facebook.github.io/flux/docs/in-depth-overview/)，這是官方當初推出 flux 時候的影片，很值得參考，也有講到 React 可以當做複習
+2. [Flux For Beginners](https://blog.andrewray.me/flux-for-stupid-people/)，淺顯易懂的教學
+3. [React/Flux in Action 實戰經驗分享](https://speakerdeck.com/coodoo/flux-in-action-shi-zhan-jing-yan-fen-xiang)，當初我入門時幫助我很多的投影片
+4. [從 Flux 與 MVC 的差異來簡介 Flux](https://blog.techbridge.cc/2016/04/29/introduce-flux-from-flux-and-mvc/)
 
 指定教材：
 
-1. 程式導師實驗計畫第二期：Week14-1 Redux
-2. 程式導師實驗計畫：Lesson 13-1 之 React + Redux
+1. [Redux 官方文件](https://redux.js.org/introduction/getting-started)
+2. [FE303] React 的好夥伴：Redux（看到 「實作簡易 todo list 結束就好」）
 
-[HW23 作業連結](/homeworks/week23/fe)
+Redux 的官方文件前陣子剛重寫過，我覺得寫得很棒，把 Redux 的許多重點講得十分清楚，因此我推薦大家從官方文件開始學習，除了這資源很棒以外，另一方面也是提前體驗「完全自學」的狀況。
+
+如果英文不太好，這邊也有舊版官方文件的中文版（只是跟新版差很多就是了）：
+
+1. [Redux 舊版文件中文版（2016 年）](https://chentsulin.github.io/redux/index.html)
+
+除了官方文件以外，也可以跟上面的課程穿插著看，應該能夠增進理解程度。
+
+如果你還有時間，可以參考第二期講解 redux 的影片：
+
+1. [程式導師實驗計畫第二期：Week14-1 Redux](https://www.youtube.com/watch?v=CrjEYMnix_8&fbclid=IwAR1Cy-0cw44dnMTExzzenmM3vTzWuTxxs4TpSV01wf29qb7m2rx0_ttRQ8M&ab_channel=Lidemy%E9%8B%B0%E5%AD%B8%E9%99%A2)
+
+[HW23 作業連結](/homeworks/week23)
 
 #### 自我檢測
 
-- [ ] 我理解 Redux 的目的以及原理
-- [ ] 我知道我們為什麼需要 Redux
+- [ ] P1 我理解 Redux 的目的以及原理
+- [ ] P1 我理解 Redux 的資料流
+- [ ] P1 我理解 Redux 當中各種重要元素，像是：dispatch, store, action, reducer 等等
+- [ ] P1 我知道我們為什麼需要 Redux
 
 ### 第二十四週（11/23 ~ 11/29）：前端框架（四）
 
-最後一週裡面我們將用 redux 來解決非同步操作的問題，讓大家知道如何利用它與 redux-promise 來解決非同步的一些問題。
+在上一週其實就已經把主要的課程都講完了，只剩下一個東西，那就是 redux middleware，這其實是在 redux 中相當重要的一個概念，因此本週的作業也會以這個為主。
+
+除此之外，這一週也會做一些額外的補充，幫大家補充幾個重要的議題，像是：
+
+1. 為什麼需要 SSR？SSR 該怎麼做？
+2. Next.js 框架介紹
+3. TypeScript 簡介
 
 指定教材：
 
-1. 第二期 Redux 補充講解：redux-thunk 與 redux-promise
-2. 程式導師實驗計畫：Lesson 13-2 之 React + Redux 下
-3. 第二期 React 補充：什麼是 super 以及生命週期的運用
-4. 第二期 React 補充：再來談談什麼是 this
+先把 [FE303] React 的好夥伴：Redux 全部看完，學習如何使用 redux-thunk，然後就可以開始做作業了。
 
-[HW24 作業連結](/homeworks/week24/fe)
+也非常推薦去看：[Redux Essentials, Part 5: Async Logic and Data Fetching#](https://redux.js.org/tutorials/essentials/part-5-async-logic)，有實際示範 redux-thunk 與 call API 的結合。
+
+再來看 Lidemy 上面 MTR04 裡的補充課程，學習 SSR, Next.js 以及 TypesScript 的基礎概念。
+
+同時也可以透過以下幾篇文章更理解 SSR，甚至是跟著文章一起實作看看：
+
+1. [React SSR | 從零開始實作 SSR — 基礎篇](https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/server-side-rendering-ssr-in-reactjs-part1-d2a11890abfc)
+2. [React | 用實作了解 Server-Side Rendering 的運作原理](https://medium.com/starbugs/react-%E7%94%A8%E5%AF%A6%E4%BD%9C%E4%BA%86%E8%A7%A3-server-side-rendering-%E7%9A%84%E9%81%8B%E4%BD%9C%E5%8E%9F%E7%90%86-c6133d9fb30d)
+3. [跟著小明一起搞懂技術名詞：MVC、SPA 與 SSR](https://hulitw.medium.com/introduction-mvc-spa-and-ssr-545c941669e9)
+
+[HW24 作業連結](/homeworks/week24)
 
 #### 自我檢測
 
-- [ ] 我知道 Redux 如何搭配 middleware 解決非同步操作的問題
+- [ ] P1 我知道 Redux 如何搭配 middleware 解決非同步操作的問題
+- [ ] P1 我知道 CSR 與 SSR 的區別
+- [ ] P2 我知道怎麼實作 SSR
+- [ ] P2 我知道 Next.js 這個框架
+- [ ] P3 我知道 TypeScript 與 JavaScript 的差異
 
 ### 第二十五週（11/30 ~ 12/06）：Final Project
 
