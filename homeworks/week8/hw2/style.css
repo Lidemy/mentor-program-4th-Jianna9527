@@ -191,7 +191,7 @@ header {
 
 .container {
     min-height     : 500px;
-    background     : gray url(/bg.jpeg) no-repeat;
+    background     : gray url(bg.jpeg) no-repeat;
     background-size: cover;
     padding-top    : 20px;
     padding-bottom : 20px;
