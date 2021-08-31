@@ -4,7 +4,7 @@ require_once('utils.php');
 session_start();
 if (!empty($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
-    $data = getUserData($user_id);
+    $data = get_user_data($user_id);
     $nickname = $data['nickname'];
 }
 if (empty($nickname)) {

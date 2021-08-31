@@ -2,7 +2,7 @@
 require_once('conn.php');
 
 // using user_id to get user data from sql
-function getUserData($user_id)
+function get_user_data($user_id)
 {
     global $conn;
     if (!empty($user_id)) {

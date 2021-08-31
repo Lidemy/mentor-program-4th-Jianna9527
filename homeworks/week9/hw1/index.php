@@ -11,7 +11,7 @@ if (!$result) {
 session_start();
 $user_id = $_SESSION['user_id'];
 $username = $_SESSION['username'];
-$data = getUserData($user_id);
+$data = get_user_data($user_id);
 $nickname = $data['nickname'];
 ?>
 
