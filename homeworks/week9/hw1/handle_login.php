@@ -10,7 +10,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 $query_string = sprintf(
-    'SELECT * FROM jianna_w9_users where username="%s" and password="%s"',
+    'SELECT * FROM jianna_w9_users WHERE username="%s" and password="%s"',
     $username,
     $password
 );
