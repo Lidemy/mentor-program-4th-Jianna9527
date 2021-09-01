@@ -1,0 +1,306 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin        : 0;
+    padding       : 0;
+    border        : 0;
+    font-size     : 100%;
+    font          : inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing : 0;
+}
+
+/*----------以下為自訂css----------*/
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+}
+
+body {
+    font-family     : 'MicrosoftJhengHei', sans-serif;
+    background-color: #F9F7F9;
+}
+
+header {
+    background-color: #FFC5C7;
+    padding         : 15px;
+    color           : #901D17;
+    text-align      : center;
+    font-weight     : bold;
+}
+
+.wrapper {
+    background-color: #F9F7F9;
+    padding-top     : 25px;
+    padding-bottom  : 20px;
+}
+
+.form_wrapper {
+    background-color: #FFFFFF;
+    max-width       : 750px;
+    min-height      : 50px;
+    margin          : 0 auto;
+    padding         : 30px;
+    box-shadow      : 5px 5px 3px #E8E8E8;
+    border-radius   : 20px;
+}
+
+.register-form__wrapper {
+    background-color: #FFFFFF;
+    max-width       : 500px;
+    min-height      : 50px;
+    margin          : 0 auto;
+    padding         : 30px;
+    box-shadow      : 5px 5px 3px #E8E8E8;
+    border-radius   : 20px;
+}
+
+.register-form__wrapper form {
+    text-align: center;
+}
+
+.login_area {
+    text-align: right;
+}
+
+.login_area a {
+    color: #BF0060;
+}
+
+form h1 {
+    margin-top   : 20px;
+    margin-bottom: 20px;
+    font-size    : 35px;
+    font-weight  : bold;
+}
+
+textarea {
+    width    : 80%;
+    height   : 100px;
+    padding  : 10px;
+    font-size: 16px;
+    resize   : none;
+    border   : 1px solid #DBDCDD;
+}
+
+textarea:focus {
+    outline     : none;
+    border-color: #85a3ca;
+    box-shadow  : 0 0 10px #E8F1FA;
+}
+
+textarea:focus::placeholder {
+    visibility: hidden;
+}
+
+.register-info__wrapper {
+    line-height  : 3.5;
+    margin-bottom: 25px;
+}
+
+.register-info__wrapper input {
+    padding  : 10px;
+    font-size: 16px;
+    border   : 1px solid #DBDCDD;
+}
+
+.error_message {
+    color: red;
+    margin-bottom: 20px;
+}
+
+form input[type="submit"],
+form input[type="button"] {
+    font-size       : 16px;
+    margin-top      : 5px;
+    cursor          : pointer;
+    padding         : 10px 20px 10px 20px;
+    border          : 1px solid #DBDCDD;
+    color           : #4C4153;
+    background-color: #FFFFFF;
+    margin-bottom   : 10px;
+}
+
+form input[type="submit"]:hover,
+form input[type="button"]:hover {
+    background-color: #E8F1FA;
+}
+
+.divider {
+    width           : 100%;
+    background-color: transparent;
+    border-top      : 1px solid #E9E8E9;
+    margin-top      : 20px;
+    margin-bottom   : 20px;
+}
+
+.comment_block {
+    display      : flex;
+    margin-bottom: 30px;
+}
+
+.comment_block>.img {
+    flex-shrink     : 0;
+    height          : 50px;
+    width           : 50px;
+    border-radius   : 50%;
+    background-color: #E8F1FA;
+    margin-right    : 10px;
+}
+
+.comment_info {
+    display      : flex;
+    flex-wrap    : wrap;
+    font-size    : 16px;
+    color        : #B2B1B2;
+    margin-bottom: 5px;
+    line-height  : 1.5;
+}
+
+.comment_username {
+    margin-right: 5px;
+    color       : #739ACC;
+}
+
+.comment_text {
+    color      : #424242;
+    line-height: 1.5;
+    white-space: pre-line;
+}
+
+@media (max-width: 374px) {
+    .comment_info {
+        flex-direction: column;
+    }
+
+    .comment_username {
+        margin-bottom: 5px;
+    }
+}
