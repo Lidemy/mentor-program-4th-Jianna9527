@@ -6,6 +6,7 @@ if (!empty($_POST['nickname_new'])) {
     $nickname = escape($_POST['nickname_new']);
 } else {
     header('location: index.php?errCode=2');
+    exit();
 }
 
 session_start();

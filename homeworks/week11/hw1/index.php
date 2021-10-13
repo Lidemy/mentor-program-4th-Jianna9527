@@ -136,7 +136,7 @@ if (isset($_SESSION['username'])) { //已登入
                                 <div class="comment_username">
                                     <?php
                                     $str_nickname = (empty($row['nickname'])) ? '路人甲' : escape($row['nickname']);
-                                    $str_username = (empty($row['username'])) ? '' : ' (@' . $row['username'] . ')';
+                                    $str_username = (empty($row['username'])) ? '' : ' (@' . escape($row['username']) . ')';
                                     echo  $str_nickname . $str_username ?>
                                 </div>
                                 <div class="comment_time"><?php echo escape($row['create_time']); ?></div>

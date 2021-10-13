@@ -4,11 +4,12 @@ require_once('utils.php');
 
 if (empty($_POST['nickname']) || empty($_POST['username']) || empty($_POST['password'])) {
     header('location: register.php?errCode=1');
+    exit();
 }
 
-$nickname = escape($_POST['nickname']);
-$username = escape($_POST['username']);
-$password = password_hash(escape($_POST['password']), PASSWORD_DEFAULT);
+$nickname = $_POST['nickname'];
+$username = $_POST['username'];
+$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
 $query_string = 'INSERT INTO jianna_w11_users (nickname, username, password) VALUES (?, ?, ?)';
 $stmt = $conn->prepare($query_string);
@@ -18,6 +19,7 @@ if (!$stmt->execute()) {
     $err_code = $conn->errno;
     if ($err_code === 1062) {
         header('location: register.php?errCode=1062');
+        exit();
     }
     die($conn->error);
 }

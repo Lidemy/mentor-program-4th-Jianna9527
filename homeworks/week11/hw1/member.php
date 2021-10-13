@@ -62,11 +62,11 @@ $result = $stmt->get_result();
                                     $role = '無權限資料';
                             }
                             echo '<tr>
-                            <td>' . $row['nickname'] . '</td>
-                            <td>' . $row['username'] . '</td>
+                            <td>' . escape($row['nickname']) . '</td>
+                            <td>' . escape($row['username']) . '</td>
                             <td>' . $role . '</td>
                             <td>
-                            <select name="' . $row['username'] . '">
+                            <select name="' . escape($row['username']) . '">
                                 <option value="none" selected disabled hidden>調整權限</option>
                                 <option value="0">停權</option>
                                 <option value="1">管理員</option>
