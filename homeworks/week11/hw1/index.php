@@ -16,7 +16,7 @@ $page_total = ceil(intval($total) / $limit);
 
 // 頁數控制
 $page_now = empty($_GET['page']) ? 1 : intval($_GET['page']);
-$offset = ($page_now - 1) * $limit;
+$offset = (int)($page_now - 1) * $limit;
 
 setcookie('page', $page_now, time() + 60);
 
@@ -212,10 +212,10 @@ if (isset($_SESSION['username'])) { //已登入
                     <?php
                     if ($page_now != 1) {
                         echo '<a class="btn-normal" href="index.php">首頁</a>';
-                        echo '<a class="btn-normal" href="index.php?page=' . $page_now - 1 . '">上一頁</a>';
+                        echo '<a class="btn-normal" href="index.php?page=' . (int)($page_now - 1) . '">上一頁</a>';
                     }
                     if ($page_now != $page_total) {
-                        echo '<a class="btn-normal" href="index.php?page=' . $page_now + 1 . '">下一頁</a>';
+                        echo '<a class="btn-normal" href="index.php?page=' . (int)($page_now + 1) . '">下一頁</a>';
                         echo '<a class="btn-normal" href="index.php?page=' . $page_total . '">最末頁</a>';
                     }
                     ?>
