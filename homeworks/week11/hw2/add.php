@@ -1,5 +1,9 @@
 <?php
 require_once('utils.php');
+session_start();
+if (!is_logged()) {
+    header('location: index.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -29,24 +33,8 @@ require_once('utils.php');
                 </div>
                 <div>
                     <?php
-                    // 驗證登入狀態與身份
-                    session_start();
-                    if (is_logged()) {
-                        $username = $_SESSION['username'];
-                        if (check_permission($username, 1)) {
-                            $is_admin = true;
-                            echo '<li><a href="add.php">新增文章</a></li>';
-                            // echo '<li><a href="admin.php">管理後台</a></li>';
-                        } else {
-                            header('location: index.php');
-                            exit();
-                        }
-                        echo '<li><a href="handle_logout.php">登出</a></li>';
-                    } else {
-                        echo '<li><a href="login.php">登入</a></li>';
-                        header('location: index.php');
-                        exit();
-                    }
+                    // 驗證登入狀態與身份產生 navbar 內容
+                    create_nav();
                     ?>
                 </div>
             </ul>

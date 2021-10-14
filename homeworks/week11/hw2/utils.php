@@ -55,3 +55,22 @@ function is_logged()
 {
     return isset($_SESSION['username']) && !empty($_SESSION['username']);
 }
+
+// 驗證登入狀態顯示 navbar
+function create_nav()
+{
+    global $is_admin;
+    $is_admin = false;
+    // 驗證登入狀態與身份
+    if (is_logged()) {
+        $username = $_SESSION['username'];
+        if (check_permission($username, 1)) {
+          $is_admin = true;
+          echo '<li><a href="add.php">新增文章</a></li>';
+          // echo '<li><a href="admin.php">管理後台</a></li>';
+        }
+        echo '<li><a href="handle_logout.php">登出</a></li>';
+      } else {
+        echo '<li><a href="login.php">登入</a></li>';
+      }
+}

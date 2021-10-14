@@ -49,23 +49,9 @@ if (!empty($_GET['id'])) {
         </div>
         <div>
           <?php
-          // 驗證登入狀態與身份
-          if (is_logged()) {
-            $username = $_SESSION['username'];
-            if (check_permission($username, 1)) {
-              $is_admin = true;
-              echo '<li><a href="add.php">新增文章</a></li>';
-              // echo '<li><a href="admin.php">管理後台</a></li>';
-            } else {
-              header('location: index.php');
-              exit();
-            }
-            echo '<li><a href="handle_logout.php">登出</a></li>';
-          } else {
-            echo '<li><a href="login.php">登入</a></li>';
-            header('location: index.php');
-            exit();
-          }
+          /// 驗證登入狀態與身份產生 navbar 內容
+          session_start();
+          create_nav();
           ?>
         </div>
       </ul>
@@ -97,11 +83,11 @@ if (!empty($_GET['id'])) {
             發表文章：
           </div>
           <div class="edit-post__input-wrapper">
-            <input type="text" name="id" hidden value="<?php echo $row['id']; ?>">
-            <input class="edit-post__input" name="title" placeholder="請輸入文章標題" value="<?php echo $row['title']; ?>" />
+            <input type="text" name="id" hidden value="<?php echo escape($row['id']); ?>">
+            <input class="edit-post__input" name="title" placeholder="請輸入文章標題" value="<?php echo escape($row['title']); ?>" />
           </div>
           <div class="edit-post__input-wrapper">
-            <textarea rows="20" class="edit-post__content" name="content"><?php echo $row['content']; ?></textarea>
+            <textarea rows="20" class="edit-post__content" name="content"><?php echo escape($row['content']); ?></textarea>
           </div>
           <div class="edit-post__btn-wrapper">
             <input type="submit" class="edit-post__btn" value="送出">
