@@ -10,7 +10,7 @@ if (!empty($_POST['id'])) {
 }
 
 if (!empty($_POST['content'])) {
-    $content = escape($_POST['content']);
+    $content = $_POST['content'];
 } else {
     header('location: edit_comment.php?id=' . $id . '&errCode=1');
     exit();
@@ -29,7 +29,7 @@ if (!$stmt->execute()) {
 
 $result = $stmt->get_result();
 if ($stmt->affected_rows == 0) {
-    $msg = '編輯失敗：沒有權限或該留言不存在。';
+    $msg = '編輯失敗：內容未變更、沒有權限或該留言不存在。';
     echo '<script type="text/javascript">alert("' . $msg . '");location.href="index.php"</script>';
 } else {
     header('location: index.php?page=' . $_COOKIE['page']);

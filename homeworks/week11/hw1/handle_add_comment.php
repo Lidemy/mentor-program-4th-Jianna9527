@@ -2,7 +2,7 @@
 require_once('conn.php');
 require_once('utils.php');
 
-$content = escape($_POST['content']);
+$content = $_POST['content'];
 if (empty($content)) {
     header('location: index.php?errCode=1');
     exit();
@@ -16,6 +16,7 @@ if (!empty($_SESSION['username'])) {
 } else {
     header('location: login.php');
     exit();
+    // 原先構想是不需要登入也可以留言
     // $username = NULL;
     // $nickname = '路人甲';
 }

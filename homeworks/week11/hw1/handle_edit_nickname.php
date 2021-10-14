@@ -3,7 +3,7 @@ require_once('conn.php');
 require_once('utils.php');
 
 if (!empty($_POST['nickname_new'])) {
-    $nickname = escape($_POST['nickname_new']);
+    $nickname = $_POST['nickname_new'];
 } else {
     header('location: index.php?errCode=2');
     exit();
