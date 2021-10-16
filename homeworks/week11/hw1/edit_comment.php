@@ -47,8 +47,8 @@ $old_comment = $row['content'];
                     <input type="button" value="回留言板" onclick="location.href='index.php'">
                 </div>
                 <h1>編輯留言</h1>
-                <input type="text" name="id" id="id" style="visibility: hidden;" value="<?php echo $comment_id ?>">
-                <textarea name="content" cols="50" rows="10" placeholder="在想什麼呢？留個言吧！"><?php echo $old_comment ?></textarea>
+                <input type="text" name="id" id="id" style="visibility: hidden;" value="<?php echo $comment_id; ?>">
+                <textarea name="content" cols="50" rows="10" placeholder="在想什麼呢？留個言吧！"><?php echo escape($old_comment); ?></textarea>
                 <input class="submit_new_comment" type="submit" value="提交">
                 <?php
                 if (isset($_GET['errCode'])) {
