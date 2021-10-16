@@ -48,7 +48,7 @@ $result = $stmt->get_result();
                         <?php
                         $i = 0;
                         while ($row = $result->fetch_assoc()) {
-                            switch (escape($row['role'])) {
+                            switch ($row['role']) {
                                 case '0':
                                     $role = '停權';
                                     break;
