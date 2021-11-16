@@ -1,0 +1,53 @@
+* {
+    -webkit-user-select: none;
+    -moz-user-select   : none;
+    -o-user-select     : none;
+    user-select        : none;
+}
+
+.w-500 {
+    max-width: 700px;
+}
+
+/* .list-group-flush {
+    border: 1px solid rgba(0, 0, 0, .125);
+} */
+
+.list-group-item .btn-delete {
+    content : '✕';
+    width   : 10px;
+    height  : 10px;
+    position: absolute;
+    right   : 15px;
+    top     : calc(50%-10px);
+    display : none;
+}
+
+.list-group-item:hover .btn-delete {
+    display: initial;
+    cursor : pointer;
+}
+
+.list-group-item:hover .btn-delete:hover {
+    color: salmon;
+}
+
+.list-group-item .item-text {
+    display  : inline-block;
+    word-wrap: break-word;
+    width    : 350px;
+}
+
+input[type="checkbox"]:checked+.item-text {
+    text-decoration: line-through;
+}
+
+.list-group-item input[type="text"] {
+    border: none;
+    width : 350px;
+}
+
+.list-group-item input[type="text"]:focus {
+    outline: none;
+    color  : #642100;
+}

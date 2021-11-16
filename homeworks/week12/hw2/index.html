@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Todo List</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <form class="todo-form col mt-5 mb-3 w-500" onSubmit="return false;" autocomplete="off">
+        <h2 class="mb-4">Todo List</h2>
+        <div class="mb-3">
+          <label for="newItem" class="form-label">What needs to be done?</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="inputNewItem" placeholder="add something...">
+            <button type="button" class="btn btn-secondary btn-enter">Enter</button>
+          </div>
+        </div>
+        <div class="btn-group d-sm-flex flex-wrap justify-content-sm-between">
+          <div class="mb-3 mb-sm-0">
+            <button type="button" class="btn btn-outline-primary me-2 btn-all active">All</button>
+            <button type="button" class="btn btn-outline-secondary me-2 btn-active">Active</button>
+            <button type="button" class="btn btn-outline-success me-2 btn-completed">Completed</button>
+          </div>
+          <div class="no-active">
+            <button type="button" class="btn btn-outline-danger me-2 btn-clear-completed">Clear Completed</button>
+            <button type="button" class="btn btn-outline-secondary btn-save">Save</button>
+          </div>
+        </div>
+        <div class="list-group mt-3">
+          <li class="list-group-item">My List - <span id="item-count">0</span> items left</li>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // escape
+    function escape(str) {
+      return str.replace(/\&/g, '&amp;')
+        .replace(/\</g, '&lt;')
+        .replace(/\>/g, '&gt;')
+        .replace(/\"/g, '&quot;')
+        .replace(/\'/g, '&#x27')
+        .replace(/\//g, '&#x2F');
+    }
+
+    // count
+    function countItem() {
+      let count = 0;
+      $('.form-check-input').each((i, element) => {
+        if ($(element).prop('checked') != true) {
+          count++;
+        }
+      });
+      $('#item-count').text(count);
+    }
+
+    // load todos
+    function load_todos() {
+      let searchParams = new URLSearchParams(window.location.search);
+      let id = searchParams.get('id');
+      if (id) {
+        $.getJSON(`http://localhost:8080/week12/hw2/api_todos.php?id=${id}`, function (data) {
+          const todos = JSON.parse(data.todos);
+          for (let todo of todos) {
+            addNewItem(todo.title, todo.isDone);
+          }
+        });
+      }
+    }
+
+    $(document).ready(() => {
+      countItem();
+      load_todos();
+    });
+
+    $('.list-group').on('click', '.form-check-input', (e) => {
+      countItem();
+    });
+
+    // add new item
+    function addNewItem(str, checked) {
+      let checkStatus = checked ? 'checked' : '';
+      if (str) {
+        formatString = `
+      <li class="list-group-item todo-content">
+        <input class="form-check-input me-2" type="checkbox" ${checkStatus}>
+        <label class="item-text">${escape(str)}</label>
+        <label class="btn-delete">✕</label>
+      </li>`;
+        $('.list-group').append(formatString);
+        countItem();
+      }
+      return;
+    }
+
+    // enter
+    $('.btn-enter').click(() => {
+      addNewItem($('#inputNewItem').val());
+      $('#inputNewItem').val('');
+    });
+
+    $('#inputNewItem').on('keydown', (e) => {
+      if (e.which == 13) {
+        addNewItem($('#inputNewItem').val());
+        $('#inputNewItem').val('');
+      }
+    });
+
+    // double click to edit mode
+    $('.list-group').on('dblclick', '.item-text', (e) => {
+      const str = $(e.target).text();
+      $(e.target).hide();
+      $(e.target).parent().append(`<input type="text" value="">`);
+      $(e.target).parent().find('input[type="text"]').focus().val(str);
+    });
+
+    $('.list-group').on('blur', 'input[type="text"]', (e) => {
+      $(e.target).hide();
+      const str = $(e.target).val();
+      $(e.target).parent().find('.item-text').text(str);
+      $(e.target).parent().find('.item-text').show();
+    });
+
+    // delete
+    $('.list-group').on('click', '.btn-delete', (e) => {
+      $(e.target).parent().remove();
+      countItem();
+    });
+
+    // buttons
+    $('.btn-group button').click((e) => {
+      if (!$(e.target).parent().hasClass('no-active')) {
+        $('.btn-group button').removeClass('active');
+        $(e.target).addClass('active');
+      }
+      return;
+    });
+
+    $('.btn-all').click((e) => {
+      $('.list-group-item').show();
+    });
+
+    $('.btn-active').click(() => {
+      $('.form-check-input').each((i, element) => {
+        if ($(element).prop('checked') == true) {
+          $(element).parent().hide();
+        } else {
+          $(element).parent().show();
+        }
+      });
+    });
+
+    $('.btn-completed').click(() => {
+      $('.form-check-input').each((i, element) => {
+        if ($(element).prop('checked') != true) {
+          $(element).parent().hide();
+        } else {
+          $(element).parent().show();
+        }
+      });
+    });
+
+    $('.btn-clear-completed').click(() => {
+      $('.form-check-input').each((i, element) => {
+        if ($(element).prop('checked') == true) {
+          $(element).parent().remove();
+        }
+        return;
+      });
+    });
+
+    // save
+    $('.btn-save').click(e => {
+      let todos = [];
+      $('.todo-content').each((i, element) => {
+        todos.push({
+          title: $(element).find('.item-text').text(),
+          isDone: $(element).find('.form-check-input').prop('checked'),
+        })
+      });
+      $.ajax({
+        type: 'POST',
+        url: 'http://localhost:8080/week12/hw2/api_add_todos.php',
+        data: {
+          todos: JSON.stringify(todos)
+        },
+        success: function (res) {
+          const resId = res.id;
+          window.location = 'index.html?id=' + resId;
+        },
+        error: function (res) {
+          alert(res.message);
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
