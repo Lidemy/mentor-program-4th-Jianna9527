@@ -1,7 +1,7 @@
 <?php
 require_once('conn.php');
 header('Content-type:application/json;charset=utf-8');
-// header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: *');
 if (empty($_GET['site_key'])) {
     $json = array(
         "ok" => false,

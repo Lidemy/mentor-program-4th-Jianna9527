@@ -95,7 +95,7 @@
     var firstID = 0;
     $(document).ready(() => {
       $.ajax({
-        url: 'http://localhost:8080/week12/hw1/api_comments.php?site_key=aaa',
+        url: 'http://mentor-program.co/mtr04group3/Jianna/week12/hw1/api_comments.php?site_key=aaa',
       }).done((data) => {
         if (!data.ok) {
           alert(data.message);
@@ -118,7 +118,7 @@
     $('#btnMoreComments').click(() => {
       offset += 5;
       $.ajax({
-        url: `http://localhost:8080/week12/hw1/api_comments.php?site_key=aaa&offset=${offset}`,
+        url: `http://mentor-program.co/mtr04group3/Jianna/week12/hw1/api_comments.php?site_key=aaa&offset=${offset}`,
       }).done((data) => {
         if (!data.ok) {
           alert(data.message);
@@ -145,7 +145,7 @@
       }
       $.ajax({
         type: 'POST',
-        url: 'http://localhost:8080/week12/hw1/api_add_comments.php',
+        url: 'http://mentor-program.co/mtr04group3/Jianna/week12/hw1/api_add_comments.php',
         data: newComment,
       }).done((data) => {
         if (!data.ok) {

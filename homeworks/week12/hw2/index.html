@@ -72,7 +72,7 @@
       let searchParams = new URLSearchParams(window.location.search);
       let id = searchParams.get('id');
       if (id) {
-        $.getJSON(`http://localhost:8080/week12/hw2/api_todos.php?id=${id}`, function (data) {
+        $.getJSON(`http://mentor-program.co/mtr04group3/Jianna/week12/hw2/api_todos.php?id=${id}`, function (data) {
           const todos = JSON.parse(data.todos);
           for (let todo of todos) {
             addNewItem(todo.title, todo.isDone);
@@ -193,7 +193,7 @@
       });
       $.ajax({
         type: 'POST',
-        url: 'http://localhost:8080/week12/hw2/api_add_todos.php',
+        url: 'http://mentor-program.co/mtr04group3/Jianna/week12/hw2/api_add_todos.php',
         data: {
           todos: JSON.stringify(todos)
         },
