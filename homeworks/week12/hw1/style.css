@@ -1,0 +1,7 @@
+textarea {
+    resize: none;
+}
+
+.w-500 {
+    max-width : 500px;
+}
